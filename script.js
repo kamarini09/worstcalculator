@@ -10,19 +10,25 @@ function getInputValue(){
 function makeOperation() {
     const firstNumber = document.querySelector('input#firstnumber').value;
     const secondNumber = document.querySelector('input#secondnumber').value;
-    const chooseOperator = document.getElementById("operator");
-     const value = chooseOperator.value;
-     console.log(value);
-     if (value === "add"){
+    // read operator from a drop down
+    const chosenOperator = document.getElementById("operator");
+    const value = chosenOperator.value;
+    const newListNumber = document.createElement("li");
+    console.log(value);
+    // regarding the append: there is probably a better way to do that. it's too long and redundant
+    if (value === "add"){
         document.querySelector("input#firstnumber").value =  Number(firstNumber) + Number(secondNumber);
+        document.querySelector("ul#results").appendChild(newListNumber).textContent =  Number(firstNumber) + Number(secondNumber);
     }
     else if (value === "sub"){
         document.querySelector("input#firstnumber").value =  Number(firstNumber) - Number(secondNumber);
+        document.querySelector("ul#results").appendChild(newListNumber).textContent =  Number(firstNumber) - Number(secondNumber);
     }
     else if (value === "mul"){
         document.querySelector("input#firstnumber").value =  Number(firstNumber) * Number(secondNumber);
-    }
-    else { document.querySelector("input#firstnumber").value =  Number(firstNumber) / Number(secondNumber);}
+        document.querySelector("ul#results").appendChild(newListNumber).textContent =  Number(firstNumber) * Number(secondNumber);
+    } else { document.querySelector("input#firstnumber").value =  Number(firstNumber) / Number(secondNumber);
+    document.querySelector("ul#results").appendChild(newListNumber).textContent =  Number(firstNumber) / Number(secondNumber);}
     document.querySelector('input#secondnumber').value = "";
 
     
@@ -35,10 +41,4 @@ function updateValue(x) {
   }
 
 
-//   function selectOperator() {
-    
-//     }
-
-    // const chooseOperator = document.getElementById("operator");
-    //  const value = chooseOperator.value;
-    //  console.log(value);
+  
