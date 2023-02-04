@@ -31,9 +31,15 @@ function makeOperation() {
     
     document.querySelector("input#firstnumber").value =  result;
     document.querySelector("ul#results").appendChild(newListNumber).textContent = result;
-    document.querySelector('input#secondnumber').value = ""; 
+    newListNumber.scrollIntoView();
+    // document.querySelector('input#secondnumber').value = ""; 
 }
+getInputValue();
 
+
+function updateValue(x) {
+    console.log(x.target.value);
+  }
     
 // old one
 // function makeOperation() {
@@ -70,12 +76,7 @@ function makeOperation() {
 
     
 // }
-getInputValue();
 
-
-function updateValue(x) {
-    console.log(x.target.value);
-  }
 
 
   
