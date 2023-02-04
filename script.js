@@ -16,6 +16,11 @@ function makeOperation() {
     const newListNumber = document.createElement("li");
     console.log(value);
     let result = "unused value";
+    const round = document.querySelector('#doround');
+    console.log(round.checked);
+    
+    const roundOption = document.getElementById("decimals");
+    const optionValue = roundOption.value;
     // regarding the append: there is probably a better way to do that. it's too long and redundant
     if (value === "add"){
         result = firstNumber + secondNumber; 
@@ -28,6 +33,11 @@ function makeOperation() {
     } else { 
         result = firstNumber / secondNumber;
     }
+
+    if (round.checked) {
+        result = result.toFixed(optionValue);
+        console.log(result);
+    }
     
     document.querySelector("input#firstnumber").value =  result;
     document.querySelector("ul#results").appendChild(newListNumber).textContent = result;
@@ -35,6 +45,8 @@ function makeOperation() {
     // document.querySelector('input#secondnumber').value = ""; 
 }
 getInputValue();
+
+
 
 
 function updateValue(x) {
