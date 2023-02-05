@@ -49,7 +49,7 @@ getInputValue();
 
 document.querySelector("p#clear").addEventListener('click', clearResults);
 
-// this function is deleting all childeren of the ul but i dont want the first 4 to be deleted
+//this function is deleting all childeren of the ul but i dont want the first 4 to be deleted
 function clearResults(){
     const clear = document.querySelector("ul#results");
     while(clear.firstChild) {
@@ -57,13 +57,15 @@ function clearResults(){
     }
 }
 
+//with this way the 4 zeros are staying there/ but probably is wrong from when i appended the result
+//because it add li and not replace the first ones
 // function clearResults(){
 //         const clear = document.querySelector("ul#results");
-//         // while(clear.firstChild) {
-//         //     clear.removeChild(clear.firstChild);
-//             for (let i = 4; i< clear.childNodes.length; i++) {
-//                 clear.removeChild(clear.lastElementChild);
-//                 console.log("ffjnd");
+//         let n = clear.children.length
+//         for (let i = 4; i< n; i++) {
+//             console.log(clear.lastElementChild)
+//             clear.removeChild(clear.lastElementChild);
+                
 //             }
 //         }
     
