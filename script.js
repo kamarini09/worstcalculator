@@ -47,6 +47,27 @@ function makeOperation() {
 getInputValue();
 
 
+document.querySelector("p#clear").addEventListener('click', clearResults);
+
+// this function is deleting all childeren of the ul but i dont want the first 4 to be deleted
+function clearResults(){
+    const clear = document.querySelector("ul#results");
+    while(clear.firstChild) {
+        clear.removeChild(clear.firstChild);
+    }
+}
+
+// function clearResults(){
+//         const clear = document.querySelector("ul#results");
+//         // while(clear.firstChild) {
+//         //     clear.removeChild(clear.firstChild);
+//             for (let i = 4; i< clear.childNodes.length; i++) {
+//                 clear.removeChild(clear.lastElementChild);
+//                 console.log("ffjnd");
+//             }
+//         }
+    
+
 
 
 function updateValue(x) {
